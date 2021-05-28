@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class FourthPage extends StatefulWidget {
-  const FourthPage({Key key}) : super(key: key);
+class SecondPage extends StatefulWidget {
+  const SecondPage({Key key}) : super(key: key);
 
   @override
-  _FourthPageState createState() => _FourthPageState();
+  _SecondPageState createState() => _SecondPageState();
 }
 
-class _FourthPageState extends State<FourthPage> {
+class _SecondPageState extends State<SecondPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,9 +24,7 @@ class _FourthPageState extends State<FourthPage> {
 
             )
         ),
-        child: Center(child: Text("GALLERY"
-            ""
-            "",style: GoogleFonts.dmSans(color: Colors.purple[100],fontSize: 25,fontWeight: FontWeight.bold)),
+        child: Center(child: Text("Gallery",style: GoogleFonts.dmSans(color: Colors.purple[100],fontSize: 25,fontWeight: FontWeight.bold)),
         ),
       ),
     );
