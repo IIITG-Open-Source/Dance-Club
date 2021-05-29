@@ -11,8 +11,8 @@ class FirstPage extends StatefulWidget {
 class _FirstPageState extends State<FirstPage> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return
+       Scaffold(
         /*appBar: AppBar(
           title: Row(
             children: [
@@ -59,8 +59,8 @@ class _FirstPageState extends State<FirstPage> {
           child: Center(child: Text("HOME",style: GoogleFonts.dmSans(color: Colors.purple[100],fontSize: 25,fontWeight: FontWeight.bold)),
           ),
         ),
-      ),
-    );
+      );
+
   }
 }
 

@@ -12,31 +12,32 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  PageController p1 = PageController();
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return Scaffold(
         appBar: AppBar(
           title: Row(
             children: [
               InkWell(
                   onTap: (){
-                    Navigator.pushNamed(context, '/FirstPage');
+                    p1.animateToPage(0, duration: Duration(milliseconds: 800), curve: Curves.easeIn);
                   },
                   child: Text('Home')),
               InkWell(
                   onTap: (){
-                    Navigator.pushNamed(context, '/SecondPage');
+                    p1.animateToPage(1, duration: Duration(milliseconds: 800), curve: Curves.easeIn);
                   },
                   child: Text('Gallery')),
               InkWell(
                   onTap: (){
-                    Navigator.pushNamed(context, '/ThirdPage');
+                    p1.animateToPage(2, duration: Duration(milliseconds: 800), curve: Curves.easeIn);
                   },
                   child: Text('Events')),
               InkWell(
                   onTap: (){
-                    Navigator.pushNamed(context, '/FourthPage');
+                    p1.animateToPage(3, duration: Duration(milliseconds: 800), curve: Curves.easeIn);
                   },
                   child: Text('About Us'))
             ],
@@ -48,6 +49,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         body: PageView(
+          controller:p1,
           scrollDirection: Axis.vertical,
           children:[
             FirstPage(),
@@ -57,7 +59,6 @@ class _HomePageState extends State<HomePage> {
           ],
 
         ),
-      ),
-    );
+      );
   }
 }

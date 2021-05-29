@@ -11,9 +11,9 @@ class ThirdPage extends StatefulWidget {
 class _ThirdPageState extends State<ThirdPage> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
+    return
+    Scaffold(
+       /* appBar: AppBar(
           title: Row(
             children: [
               InkWell(
@@ -43,7 +43,7 @@ class _ThirdPageState extends State<ThirdPage> {
             Icons.dangerous,
             color: Colors.white,
           ),
-        ),
+        ),*/
         body: Container(
           decoration: BoxDecoration(
               gradient: LinearGradient(
@@ -59,7 +59,7 @@ class _ThirdPageState extends State<ThirdPage> {
           child: Center(child: Text("EVENTS AND ACHIEVEMENTS",style: GoogleFonts.dmSans(color: Colors.purple[100],fontSize: 25,fontWeight: FontWeight.bold)),
           ),
         ),
-      ),
-    );
+      );
+
   }
 }

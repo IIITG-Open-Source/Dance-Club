@@ -11,9 +11,9 @@ class FourthPage extends StatefulWidget {
 class _FourthPageState extends State<FourthPage> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        home: Scaffold(
-          appBar: AppBar(
+    return
+         Scaffold(
+         /* appBar: AppBar(
             title: Row(
               children: [
                 InkWell(
@@ -43,7 +43,7 @@ class _FourthPageState extends State<FourthPage> {
               Icons.dangerous,
               color: Colors.white,
             ),
-          ),
+          ),*/
         body: Container(
           decoration: BoxDecoration(
               gradient: LinearGradient(
@@ -61,7 +61,7 @@ class _FourthPageState extends State<FourthPage> {
               ,style: GoogleFonts.dmSans(color: Colors.purple[100],fontSize: 25,fontWeight: FontWeight.bold)),
           ),
         ),
-      ),
-    );
+      );
+
   }
 }

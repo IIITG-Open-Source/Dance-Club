@@ -11,9 +11,9 @@ class SecondPage extends StatefulWidget {
 class _SecondPageState extends State<SecondPage> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
+    return
+      Scaffold(
+       /* appBar: AppBar(
           title: Row(
             children: [
               InkWell(
@@ -43,7 +43,7 @@ class _SecondPageState extends State<SecondPage> {
             Icons.dangerous,
             color: Colors.white,
           ),
-        ),
+        ),*/
         body: Container(
           decoration: BoxDecoration(
               gradient: LinearGradient(
@@ -59,7 +59,7 @@ class _SecondPageState extends State<SecondPage> {
           child: Center(child: Text("Gallery",style: GoogleFonts.dmSans(color: Colors.purple[100],fontSize: 25,fontWeight: FontWeight.bold)),
           ),
         ),
-      ),
-    );
+      );
+
   }
 }
