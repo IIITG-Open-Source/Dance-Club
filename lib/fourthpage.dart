@@ -26,6 +26,8 @@ class _FourthPageState extends State<FourthPage> {
         ),
         child: Center(child: Text("GALLERY"
             ""
+            ""
+            ""
             "",style: GoogleFonts.dmSans(color: Colors.purple[100],fontSize: 25,fontWeight: FontWeight.bold)),
         ),
       ),
