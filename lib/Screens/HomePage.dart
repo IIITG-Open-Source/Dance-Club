@@ -14,16 +14,49 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: PageView(
-        scrollDirection: Axis.vertical,
-        children:[
-          FirstPage(),
-          SecondPage(),
-          ThirdPage(),
-          FourthPage(),
-        ],
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Row(
+            children: [
+              InkWell(
+                  onTap: (){
+                    Navigator.pushNamed(context, '/FirstPage');
+                  },
+                  child: Text('Home')),
+              InkWell(
+                  onTap: (){
+                    Navigator.pushNamed(context, '/SecondPage');
+                  },
+                  child: Text('Gallery')),
+              InkWell(
+                  onTap: (){
+                    Navigator.pushNamed(context, '/ThirdPage');
+                  },
+                  child: Text('Events')),
+              InkWell(
+                  onTap: (){
+                    Navigator.pushNamed(context, '/FourthPage');
+                  },
+                  child: Text('About Us'))
+            ],
+          ),
+          elevation: 0,
+          leading: Icon(
+            Icons.dangerous,
+            color: Colors.white,
+          ),
+        ),
+        body: PageView(
+          scrollDirection: Axis.vertical,
+          children:[
+            FirstPage(),
+            SecondPage(),
+            ThirdPage(),
+            FourthPage(),
+          ],
 
+        ),
       ),
     );
   }

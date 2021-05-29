@@ -21,14 +21,16 @@ class _DanceWebsiteState extends State<DanceWebsite> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      initialRoute: '/Home',
       routes: {
+        '/Home':(context)=> HomePage(),
         '/FirstPage': (context) => FirstPage(),
         '/SecondPage': (context) => SecondPage(),
         '/ThirdPage': (context) => ThirdPage(),
         '/FourthPage': (context) => FourthPage()
       },
       home: Scaffold(
-          appBar: AppBar(
+         /* appBar: AppBar(
             title: Row(
               children: [
                 InkWell(
@@ -58,7 +60,7 @@ class _DanceWebsiteState extends State<DanceWebsite> {
               Icons.dangerous,
               color: Colors.white,
             ),
-          ),
+          ),*/
           body: HomePage()),
       debugShowCheckedModeBanner: false,
     );
