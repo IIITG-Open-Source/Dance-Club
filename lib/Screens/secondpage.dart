@@ -24,7 +24,7 @@ class _SecondPageState extends State<SecondPage> {
 
             )
         ),
-        child: Center(child: Text("ABOUT US",style: GoogleFonts.dmSans(color: Colors.purple[100],fontSize: 25,fontWeight: FontWeight.bold)),
+        child: Center(child: Text("Gallery",style: GoogleFonts.dmSans(color: Colors.purple[100],fontSize: 25,fontWeight: FontWeight.bold)),
         ),
       ),
     );
