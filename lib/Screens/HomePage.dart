@@ -18,28 +18,33 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.black,
           title: Row(
             children: [
               InkWell(
                   onTap: (){
                     p1.animateToPage(0, duration: Duration(milliseconds: 800), curve: Curves.easeIn);
                   },
-                  child: Text('Home')),
+                  child: Text("HOME  ",style: GoogleFonts.dmSans(color: Colors.purple[100],fontSize: 17,fontWeight: FontWeight.bold),
+                  ),
+              ),
               InkWell(
                   onTap: (){
                     p1.animateToPage(1, duration: Duration(milliseconds: 800), curve: Curves.easeIn);
                   },
-                  child: Text('Gallery')),
+                  child: Text("GALLERY  ",style: GoogleFonts.dmSans(color: Colors.purple[100],fontSize: 17,fontWeight: FontWeight.bold))),
               InkWell(
                   onTap: (){
                     p1.animateToPage(2, duration: Duration(milliseconds: 800), curve: Curves.easeIn);
                   },
-                  child: Text('Events')),
+                  child: Text("EVENTS  ",style: GoogleFonts.dmSans(color: Colors.purple[100],fontSize: 17,fontWeight: FontWeight.bold)
+                  )
+              ),
               InkWell(
                   onTap: (){
                     p1.animateToPage(3, duration: Duration(milliseconds: 800), curve: Curves.easeIn);
                   },
-                  child: Text('About Us'))
+                  child: Text("ABOUT US  ",style: GoogleFonts.dmSans(color: Colors.purple[100],fontSize: 17,fontWeight: FontWeight.bold)))
             ],
           ),
           elevation: 0,

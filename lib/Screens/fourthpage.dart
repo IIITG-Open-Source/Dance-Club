@@ -56,9 +56,8 @@ class _FourthPageState extends State<FourthPage> {
 
               )
           ),
-          child: Center(child: Text("About Us"
-
-              ,style: GoogleFonts.dmSans(color: Colors.purple[100],fontSize: 25,fontWeight: FontWeight.bold)),
+          child: Center(child: Text("About Us",style: GoogleFonts.dmSans(color: Colors.purple[100],fontSize: 25,fontWeight: FontWeight.bold)
+          ),
           ),
         ),
       );
