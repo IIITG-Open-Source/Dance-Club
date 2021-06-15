@@ -24,30 +24,13 @@ class _HomePageState extends State<HomePage> {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            InkWell(
-              onTap: (){
-                p1.animateToPage(0, duration: Duration(milliseconds: 800), curve: Curves.easeIn);
-              },
-              child: Text("HOME  |  ",style: GoogleFonts.dmSans(color: Color(0xFF2A817D),fontSize: 20,fontWeight: FontWeight.bold),
-              ),
-            ),
-            InkWell(
-                onTap: (){
-                  p1.animateToPage(1, duration: Duration(milliseconds: 800), curve: Curves.easeIn);
-                },
-                child: Text("GALLERY  |  ",style: GoogleFonts.dmSans(color: Color(0xFF2A817D),fontSize: 20,fontWeight: FontWeight.bold))),
-            InkWell(
-                onTap: (){
-                  p1.animateToPage(2, duration: Duration(milliseconds: 800), curve: Curves.easeIn);
-                },
-                child: Text("EVENTS  |  ",style: GoogleFonts.dmSans(color: Color(0xFF2A817D),fontSize: 20,fontWeight: FontWeight.bold)
-                )
-            ),
-            InkWell(
-                onTap: (){
-                  p1.animateToPage(3, duration: Duration(milliseconds: 800), curve: Curves.easeIn);
-                },
-                child: Text("ABOUT US",style: GoogleFonts.dmSans(color: Color(0xFF2A817D),fontSize: 20,fontWeight: FontWeight.bold)))
+            AppbarButton(p1: p1, title: "Home",pgNumber: 0,),
+            SizedBox(width: 10,),
+            AppbarButton(p1: p1, title: "Gallery",pgNumber: 1,),
+            SizedBox(width: 10,),
+            AppbarButton(p1: p1, title: "Events",pgNumber: 2,),
+            SizedBox(width: 10,),
+            AppbarButton(p1: p1, title: "About Us",pgNumber: 3,),
           ],
         ),
         elevation: 0,
@@ -64,7 +47,25 @@ class _HomePageState extends State<HomePage> {
           ThirdPage(),
           FourthPage(),
         ],
+      ),
+    );
+  }
+}
 
+class AppbarButton extends StatelessWidget {
+
+  final String title;
+  final PageController p1;
+  final int pgNumber;
+  AppbarButton({this.p1,this.title,this.pgNumber});
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: (){
+        p1.animateToPage(pgNumber, duration: Duration(milliseconds: 800), curve: Curves.easeIn);
+      },
+      child: Text("$title",style: GoogleFonts.dmSans(color: Color(0xFF2A817D),fontSize: 20,fontWeight: FontWeight.bold),
       ),
     );
   }

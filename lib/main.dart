@@ -1,6 +1,6 @@
 import 'package:dancewebsite/Screens/HomePage.dart';
 import 'package:flutter/material.dart';
-
+import 'package:responsive_framework/responsive_framework.dart';
 import 'Screens/firstpage.dart';
 import 'Screens/fourthpage.dart';
 import 'Screens/secondpage.dart';
@@ -30,39 +30,22 @@ class _DanceWebsiteState extends State<DanceWebsite> {
         '/FourthPage': (context) => FourthPage()
       },
       home: Scaffold(
-         /* appBar: AppBar(
-            title: Row(
-              children: [
-                InkWell(
-                    onTap: (){
-                      Navigator.pushNamed(context, '/FirstPage');
-                    },
-                    child: Text('Home')),
-                InkWell(
-                    onTap: (){
-                      Navigator.pushNamed(context, '/SecondPage');
-                    },
-                    child: Text('Gallery')),
-                InkWell(
-                    onTap: (){
-                      Navigator.pushNamed(context, '/ThirdPage');
-                    },
-                    child: Text('Events')),
-                InkWell(
-                    onTap: (){
-                      Navigator.pushNamed(context, '/FourthPage');
-                    },
-                    child: Text('About Us'))
-              ],
-            ),
-            elevation: 0,
-            leading: Icon(
-              Icons.dangerous,
-              color: Colors.white,
-            ),
-          ),*/
           body: HomePage()),
       debugShowCheckedModeBanner: false,
+       builder: (context,widget){
+        return ResponsiveWrapper.builder(
+            BouncingScrollWrapper.builder(context, widget),
+            maxWidth: 1800,
+            minWidth: 450,
+            defaultScale: true,
+            breakpoints: [
+              ResponsiveBreakpoint.resize(450, name: MOBILE),
+              ResponsiveBreakpoint.autoScale(800, name: TABLET),
+              ResponsiveBreakpoint.autoScale(1000, name: TABLET),
+              ResponsiveBreakpoint.resize(1200, name: DESKTOP),
+              ResponsiveBreakpoint.autoScale(2460, name: "4K"),
+            ],
+            );},
     );
   }
 }

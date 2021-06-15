@@ -12,39 +12,10 @@ class FirstPage extends StatefulWidget {
 class _FirstPageState extends State<FirstPage> {
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
+    var width =  MediaQuery.of(context).size.width;
     return
       Scaffold(
-        /*appBar: AppBar(
-          title: Row(
-            children: [
-              InkWell(
-                  onTap: (){
-                    Navigator.pushNamed(context, '/FirstPage');
-                  },
-                  child: Text('Home')),
-              InkWell(
-                  onTap: (){
-                    Navigator.pushNamed(context, '/SecondPage');
-                  },
-                  child: Text('Gallery')),
-              InkWell(
-                  onTap: (){
-                    Navigator.pushNamed(context, '/ThirdPage');
-                  },
-                  child: Text('Events')),
-              InkWell(
-                  onTap: (){
-                    Navigator.pushNamed(context, '/FourthPage');
-                  },
-                  child: Text('About Us'))
-            ],
-          ),
-          elevation: 0,
-          leading: Icon(
-            Icons.dangerous,
-            color: Colors.white,
-          ),
-        ),*/
         body: SizedBox.expand(
           child: Container(
             decoration: BoxDecoration(
@@ -54,11 +25,11 @@ class _FirstPageState extends State<FirstPage> {
               ),
             ),
             child: Padding(
-              padding: const EdgeInsets.only(top: 350),
+              padding: EdgeInsets.only(top: height*0.6),
               child: Stack(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(left: 100),
+                    padding:  EdgeInsets.only(left: width*0.095),
                     child: Text("Welcome to IIITG\n    D-Dazzlers",
                       style:
                       GoogleFonts.dancingScript(
@@ -69,7 +40,7 @@ class _FirstPageState extends State<FirstPage> {
                   ),
 
                   Padding(
-                    padding: const EdgeInsets.only(top: 90,left: 60),
+                    padding:  EdgeInsets.only(top: height*0.11,left: width*0.075),
                     child: Text(
                       "The first dance is the worst dance,\n  The last dance is the best dance.\nAll the roads of persistent practice\n   Lead to the Land of Perfection!",
                       style: GoogleFonts.openSans(
