@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hover_effect/hover_effect.dart';
 
 class FirstPage extends StatefulWidget {
   const FirstPage({Key key}) : super(key: key);
@@ -45,6 +46,8 @@ class _FirstPageState extends State<FirstPage> {
           ),
         ),*/
         body: Container(
+          width: double.infinity,
+          height: double.infinity,
           decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
@@ -53,11 +56,9 @@ class _FirstPageState extends State<FirstPage> {
                 ],
                 end: Alignment.bottomCenter,
                 begin: Alignment.topCenter,
-
               )
           ),
-          child: Center(child: Text("HOME",style: GoogleFonts.dmSans(color: Colors.purple[100],fontSize: 25,fontWeight: FontWeight.bold)),
-          ),
+          child: Container(child: Text("HOME"),)
         ),
       );
 

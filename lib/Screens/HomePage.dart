@@ -18,7 +18,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.transparent,//Color(0xFF8A01D7),
+          backgroundColor: Color(0xFF8A01D7),
           title: Row(
             children: [
               InkWell(
