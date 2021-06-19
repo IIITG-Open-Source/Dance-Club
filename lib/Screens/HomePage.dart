@@ -5,6 +5,7 @@ import 'package:dancewebsite/Screens/thirdpage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 class HomePage extends StatefulWidget {
   const HomePage({Key key}) : super(key: key);
 
@@ -17,39 +18,78 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            AppbarButton(p1: p1, title: "Home",pgNumber: 0,),
-            SizedBox(width: 10,),
-            AppbarButton(p1: p1, title: "Gallery",pgNumber: 1,),
-            SizedBox(width: 10,),
-            AppbarButton(p1: p1, title: "Events",pgNumber: 2,),
-            SizedBox(width: 10,),
-            AppbarButton(p1: p1, title: "About Us",pgNumber: 3,),
-          ],
-        ),
-        elevation: 0,
-        leading: Image(
-          width: 40,
-          height: 40,
-          image: AssetImage("images/logo.png"),
-        ),
-      ),
-      body: PageView(
-        controller:p1,
-        scrollDirection: Axis.vertical,
-        children:[
-          FirstPage(),
-          SecondPage(),
-          ThirdPage(),
-          FourthPage(),
-        ],
-      ),
+    return ResponsiveBuilder(
+      builder: (context, sizing) {
+        if(sizing.isDesktop)
+          {
+            return Scaffold(
+              extendBodyBehindAppBar: true,
+              appBar:AppBar(
+                backgroundColor: Colors.transparent,
+                title: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    AppbarButton(p1: p1, title: "Home",pgNumber: 0,),
+                    SizedBox(width: 10,),
+                    AppbarButton(p1: p1, title: "Gallery",pgNumber: 1,),
+                    SizedBox(width: 10,),
+                    AppbarButton(p1: p1, title: "Events",pgNumber: 2,),
+                    SizedBox(width: 10,),
+                    AppbarButton(p1: p1, title: "About Us",pgNumber: 3,),
+                  ],
+                ),
+                elevation: 0,
+                leading: Image(
+                  width: 40,
+                  height: 40,
+                  image: AssetImage("images/logo.png"),
+                ),
+              ),
+              body: PageView(
+                controller:p1,
+                scrollDirection: Axis.vertical,
+                children:[
+                  FirstPage(),
+                  SecondPage(),
+                  ThirdPage(),
+                  FourthPage(),
+                ],
+              ),
+            );
+          }
+        if(sizing.isMobile)
+          {
+            return Scaffold(
+           /*   extendBodyBehindAppBar: true,*/
+              backgroundColor: Colors.black,
+              extendBody: true,
+              drawer: Drawer(
+                child: ListView(
+                  children: [
+                    AppbarButton(p1: p1, title: "Home",pgNumber: 0,),
+                    SizedBox(width: 10,),
+                    AppbarButton(p1: p1, title: "Gallery",pgNumber: 1,),
+                    SizedBox(width: 10,),
+                    AppbarButton(p1: p1, title: "Events",pgNumber: 2,),
+                    SizedBox(width: 10,),
+                    AppbarButton(p1: p1, title: "About Us",pgNumber: 3,),
+                  ],
+                ),
+              ),
+              body: PageView(
+                controller:p1,
+                scrollDirection: Axis.vertical,
+                children:[
+                  FirstPage(),
+                  SecondPage(),
+                  ThirdPage(),
+                  FourthPage(),
+                ],
+              ),
+            );
+          }
+       return CircularProgressIndicator();
+      }
     );
   }
 }

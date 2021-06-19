@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_insta/flutter_insta.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
 class SecondPage extends StatefulWidget {
   const SecondPage({Key key}) : super(key: key);
@@ -32,7 +33,12 @@ class _SecondPageState extends State<SecondPage> {
   Widget build(BuildContext context) {
     return
       Scaffold(
-        body: Container(
+        body:ResponsiveBuilder(
+          builder: (BuildContext, sizing)
+          {
+            if(sizing.isDesktop)
+              {
+               return Container(
           width: double.infinity,
           height: double.infinity,
           decoration: BoxDecoration(
@@ -92,13 +98,6 @@ class _SecondPageState extends State<SecondPage> {
                             MediaContainer(),
                             MediaContainer(),
                             MediaContainer(),
-                           // MediaContainer(),
-                           /* MediaContainer(),
-                            MediaContainer(),
-                            MediaContainer(),
-                            MediaContainer(),
-                            MediaContainer(),
-                            MediaContainer(),*/
                           ],
                       ),
                     ),
@@ -116,9 +115,93 @@ class _SecondPageState extends State<SecondPage> {
               )
             ),
           )
-        ),
+        );
+              }
+            if(sizing.isMobile)
+              {
+                return Container(
+                  width: double.infinity,
+                  height: double.infinity,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage("images/background.png"),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  child: Padding(
+                    padding:  EdgeInsets.only(top: 40,left: 20,right: 20),
+                    child: Center(
+                        child: Padding(
+                          padding:  EdgeInsets.only(top: 40,left: 20,right: 20),
+                          child: Column(
+                            children: [
+                              Text("GALLERY",style: Theme.of(context).textTheme.headline3.copyWith(color: Color(0xFF2A817D)),),
+                              Expanded(
+                                flex: 1,
+                                child: Container(
+                                  width: double.infinity,
+                                  height: 300,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      color: Colors.transparent
+                                  ),
+                                  child: CarouselSlider(
+                                      items: [
+                                        MediaContainer2(),
+                                        MediaContainer2(),
+                                        MediaContainer2(),
+                                        MediaContainer2(),
+                                        MediaContainer2(),
+                                        MediaContainer2(),
+                                      ], options: CarouselOptions(
+                                    autoPlayCurve: Curves.elasticInOut,
+                                    autoPlayInterval: Duration(seconds: 3),
+                                    autoPlayAnimationDuration: Duration(seconds: 2),
+                                    autoPlay: true,
+                                    aspectRatio: 1,
+                                    enlargeCenterPage:true,
+                                    scrollDirection: Axis.horizontal,
+                                    initialPage: 0,
+                                    enableInfiniteScroll: true,
+                                  )),
+                                ),
+                              ),
+                              Expanded(
+                                flex: 2,
+                                child: GridView.count(
+                                  crossAxisCount: 1,
+                                  crossAxisSpacing: 5,
+                                  mainAxisSpacing: 10,
+                                  addAutomaticKeepAlives: true,
+                                  addRepaintBoundaries: true,
+                                  childAspectRatio: 4/2,
+                                  children: [
+                                    MediaContainer(),
+                                    MediaContainer(),
+                                    MediaContainer(),
+                                  ],
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(bottom: 80),
+                                child: RaisedButton(
+                                  elevation: 20,
+                                  color: Colors.teal,
+                                  onPressed: (){},
+                                  child: Text("More Videos & Photos",style: Theme.of(context).textTheme.bodyText2.copyWith(color: Colors.white),),
+                                ),
+                              )
+                            ],
+                          ),
+                        )
+                    ),
+                  ),
+                );
+              }
+            return CircularProgressIndicator();
+          },
+        )
       );
-
   }
 }
 

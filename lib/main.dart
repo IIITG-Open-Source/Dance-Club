@@ -41,7 +41,7 @@ class _DanceWebsiteState extends State<DanceWebsite> {
             breakpoints: [
               ResponsiveBreakpoint.resize(450, name: MOBILE),
               ResponsiveBreakpoint.autoScale(800, name: TABLET),
-              ResponsiveBreakpoint.autoScale(1000, name: TABLET),
+              ResponsiveBreakpoint.autoScale(1200, name: TABLET),
               ResponsiveBreakpoint.resize(1200, name: DESKTOP),
               ResponsiveBreakpoint.autoScale(2460, name: "4K"),
             ],
