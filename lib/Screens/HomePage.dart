@@ -35,6 +35,8 @@ class _HomePageState extends State<HomePage> {
         ),
         elevation: 0,
         leading: Image(
+          width: 40,
+          height: 40,
           image: AssetImage("images/logo.png"),
         ),
       ),
