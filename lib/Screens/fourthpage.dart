@@ -59,62 +59,63 @@ class _FourthPageState extends State<FourthPage> {
               child: Stack(
                 children: [
                   Padding(
-                      padding: EdgeInsets.only(left: width*0.77,top: height*0.20,right: width*0.01),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        border: InputBorder.none,
-                        fillColor: Colors.yellow,
-                        filled: true,
-                        labelText: "Name",
-                        labelStyle: GoogleFonts.openSans(
-                          color: Color(0xFF03989E),
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
+                    padding: EdgeInsets.only(left: width*0.77,top: height*0.20,right: width*0.01,bottom: height*0.09),
+                    child: Card(
+                      borderOnForeground: true,
+                      color: Colors.transparent,
+                      child: Form(
+                        
+                          child: Column(
+                            children: [
+                              TextFormField(
+                                decoration: InputDecoration(
+                                  
+                                  border: InputBorder.none,
+                                  fillColor: Colors.yellow,
+                                  filled: true,
+                                  labelText: "Name",
+                                  labelStyle: GoogleFonts.openSans(
+                                    color: Color(0xFF03989E),
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                  ),
 
+                                ),
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              TextFormField(
+                                decoration: InputDecoration(
+                                  border: InputBorder.none,
+                                  fillColor: Colors.yellow,
+                                  filled: true,
+                                  labelText: "Contact No.",
+                                  labelStyle: GoogleFonts.openSans(
+                                    color: Color(0xFF03989E),
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                              TextButton(
+                                onPressed: (){
+
+                                },
+                                child: Text(" Submit ",style: GoogleFonts.openSans(
+                                  color: Colors.yellow,
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.bold,
+
+                                ),
+                                ),
+                              ),
+
+                            ],
+                          ),
                       ),
                     ),
-
                   ),
-
-                  Padding(
-                    padding: EdgeInsets.only(left: width*0.77,top: height*0.31,right: width*0.01),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        border: InputBorder.none,
-                        fillColor: Colors.yellow,
-                        filled: true,
-                        labelText: "Contact No.",
-                        labelStyle: GoogleFonts.openSans(
-                          color: Color(0xFF03989E),
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-
-                        ),
-
-                      ),
-                    ),
-
-                  ),
-
-                  Padding(
-                    padding: EdgeInsets.only(left: width*0.85,top: height*0.41,right: width*0.01),
-                    child: TextButton(
-                      onPressed: (){
-
-                      },
-                      child: Text(" Submit ",style: GoogleFonts.openSans(
-                        color: Colors.yellow,
-                        fontSize: 17,
-                        fontWeight: FontWeight.bold,
-
-                      ),
-                      ),
-                    ),
-
-                  ),
-
-
 
                   Padding(
                     padding:  EdgeInsets.only(top: height*0.19,left: width*0.025),
