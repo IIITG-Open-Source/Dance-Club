@@ -46,15 +46,10 @@ class _ThirdPageState extends State<ThirdPage> {
         ),*/
         body: Container(
           decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  Color(0xFFB551F2),
-                  Color(0xFF8A01D7)
-                ],
-                end: Alignment.bottomCenter,
-                begin: Alignment.topCenter,
-
-              )
+            image: DecorationImage(
+              image: AssetImage("images/background.png"),
+              fit: BoxFit.cover,
+            ),
           ),
           child: Center(child: Text("EVENTS AND ACHIEVEMENTS",style: GoogleFonts.dmSans(color: Colors.purple[100],fontSize: 25,fontWeight: FontWeight.bold)),
           ),
