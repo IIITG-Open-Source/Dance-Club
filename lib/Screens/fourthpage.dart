@@ -118,13 +118,13 @@ class _FourthPageState extends State<FourthPage> {
                   ),
 
                   Padding(
-                    padding:  EdgeInsets.only(top: height*0.19,left: width*0.025),
+                    padding:  EdgeInsets.only(top: height*0.15,left: width*0.025),
                     child: Text(
-                      "The Indian Institute Of Information Technology Guwahati\nDance Club was started in the year 2017\n\nThe club conducts events on most of the occasions\n\n"
+                      "The IIIT GUWAHATI Dance Club \nwas started in the year 2017\n\nThe club conducts events on most of the occasions\n\n"
                           "The Club Coordinators are as follows : \n\nSrujan Chikke(9999999999),\nSayantani Dutta(99999999999)",
-                      style: GoogleFonts.openSans(
-                        color: Color(0xFF03989E),
-                        fontSize: 16,
+                      style: GoogleFonts.dancingScript(
+                        color: Colors.black,
+                        fontSize: 22,
                         fontWeight: FontWeight.bold,
                       ),
                       textAlign: TextAlign.left,
